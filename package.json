@@ -1,0 +1,83 @@
+{
+  "name": "interview",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently npm:start:client npm:start:server",
+    "start:client": "wait-on -l tcp:8443 && PORT=5000 HTTPS=true SSL_CRT_FILE=dev-certs/server-crt.pem SSL_KEY_FILE=dev-certs/server-key.pem react-scripts start",
+    "start:server": "concurrently npm:dev:server:webpack npm:dev:server:nodemon",
+    "dev:server:webpack": "webpack --config webpack.config.server.js --watch",
+    "dev:server:nodemon": "rm -f build/server.js && wait-on -l build/server.js && nodemon build/server.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "react-scripts build",
+    "build:server": "webpack --config webpack.config.server.js",
+    "start:prod": "node build/server",
+    "test": "EXPRESS_PORT=8444 react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "proxy": "https://localhost:8443",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-redux": "^7.2.1",
+    "react-scripts": "3.4.3",
+    "redux": "^4.0.5",
+    "redux-observable": "^1.2.0",
+    "typescript": "~3.7.2"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/express": "^4.17.8",
+    "@types/react-redux": "^7.1.9",
+    "@types/supertest": "^2.0.10",
+    "concurrently": "^5.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
+    "nodemon": "^2.0.6",
+    "react-test-renderer": "^17.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "supertest": "^6.0.1",
+    "ts-loader": "^8.0.6",
+    "wait-on": "^5.2.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/index.ts"
+    ],
+    "coverageReporters": [
+      "text"
+    ]
+  }
+}
