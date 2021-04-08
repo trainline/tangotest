@@ -38,9 +38,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 Runs the built app in production mode, served by Express.<br />
 Open [https://localhost:8443](https://localhost:8443) to view it in the browser.
 
-## Stories to be implemented
+## User stories to be implemented
 
-https://wiki.thetrainline.com/display/TAN/%28New%29+face-to-face+interview
+https://wiki.thetrainline.com/display/TAN/2.+face-to-face+interview
+
+This is a private url; the stories will be disclosed and discussed with the candidate at the beginning of the interview.
 
 ## Definitions
 - A station is (`name`, `id`, `latitude`, `longitude`, ...)
