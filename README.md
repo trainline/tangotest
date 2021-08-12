@@ -38,13 +38,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 Runs the built app in production mode, served by Express.<br />
 Open [https://localhost:8443](https://localhost:8443) to view it in the browser.
 
-## User stories to be implemented
+## User Stories to be implemented
 
+(This is a private url; the requirements will be disclosed and discussed with the candidate at the beginning of the interview)
 https://wiki.thetrainline.com/display/TAN/2.+face-to-face+interview
 
-This is a private url; the stories will be disclosed and discussed with the candidate at the beginning of the interview.
-
 ## Definitions
-- A station is (`name`, `id`, `latitude`, `longitude`, ...)
-- A route is an (`origin` station, `destination` station)
-- A journey is a (`route`, `departAt`, `arriveAt`, `duration`, `price`, ...)
+- A *station* is (`name`, `id`, `latitude`, `longitude`, ...)
+- A *route* is an (`origin` station, `destination` station)
+- A *journey* is a (`route`, `departAt`, `arriveAt`, `duration`, `price`, ...)
