@@ -1,6 +1,19 @@
+# Notes for the candidate
+
+- Not all the code will have to remain as it is for the exercise to be completed, and it doesn't matter if you are not familiar with all the stack as you will be able to use google for documentation.
+- You should verify they you run the getting started commands successfully from your machine - you should end up with the Create React App screen.
+- You should spend a little time looking at the way the project is structured. At Trainline, at this moment, key libraries are TypeScript, Redux, redux-observable and Express so the boilerplate uses these. There are example tests for both the client and the server.
+- During the interview we'll introduce the stories and acceptance criteria we would you to work on (internal private link: https://wiki.thetrainline.com/display/TAN/2.+face-to-face+interview).
+
+## Definitions
+- A *station* is (`name`, `id`, `latitude`, `longitude`, ...)
+- A *route* is an (`origin` station, `destination` station)
+- A *journey* is a (`route`, `departAt`, `arriveAt`, `duration`, `price`, ...)
+
+# Getting started
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Getting started
 
     nvm install
     yarn
@@ -37,13 +50,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Runs the built app in production mode, served by Express.<br />
 Open [https://localhost:8443](https://localhost:8443) to view it in the browser.
-
-## User Stories to be implemented
-
-(This is a private url; the requirements will be disclosed and discussed with the candidate at the beginning of the interview)
-https://wiki.thetrainline.com/display/TAN/2.+face-to-face+interview
-
-## Definitions
-- A *station* is (`name`, `id`, `latitude`, `longitude`, ...)
-- A *route* is an (`origin` station, `destination` station)
-- A *journey* is a (`route`, `departAt`, `arriveAt`, `duration`, `price`, ...)
